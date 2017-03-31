@@ -9,6 +9,7 @@ env:
 before_install:
  - sudo apt-get install -y protobuf-compiler
 before_script:
+ - export PWD=`pwd`
  - git clone --depth 1 https://github.com/apache/hadoop.git
  - cd hadoop
 script:
@@ -16,7 +17,7 @@ script:
  - mvn -B -q install
  - cd ..
  - mvn -B -q site -Dmaven.javadoc.skip=true
- - mvn -B -q site:stage -DstagingDirectory=~/gh-pages
+ - mvn -B -q site:stage -DstagingDirectory=${PWD}/gh-pages
 deploy:
   skip_cleanup: true
   provider: script
