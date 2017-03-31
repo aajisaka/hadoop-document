@@ -22,8 +22,10 @@ script:
  - mvn -B -q site -Dmaven.javadoc.skip=true
  - mvn -B -q site:stage -DstagingDirectory=${PWD}/gh-pages
 deploy:
-  skip_cleanup: true
-  provider: script
-  script: ./deploy.sh
-  on:
-    branch: master
+ - cd ${PWD}/gh-pages
+ - git init
+ - git config --global user.email "aajisaka@apache.org"
+ - git config --global user.name "Akira Ajisaka"
+ - git add -A
+ - git commit -m "Automatic deploy to GitHub pages"
+ - git push --quiet --force "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
