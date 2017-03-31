@@ -1,7 +1,7 @@
 #!/bin/bash
-cd ~/gh-pages
-
 set -x
+
+cd ${PWD}/gh-pages
 git init
 git config --global user.email "aajisaka@apache.org"
 git config --global user.name "Akira Ajisaka"
