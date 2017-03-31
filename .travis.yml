@@ -7,7 +7,7 @@ env:
     - GH_REF: github.com/aajisaka/hadoop-document.git
     - secure: "GuExArhOg4mCgctdv1y+KU9Udv/anWlrSjftNVLpXW8DPTdcQN1YVJTjUAWHyRK8gb2lua9yhiPw1YapovvZJhLY8CMRxZZE4XOxm2ujSBVT21Z8tjQpW2qkx9FlJR1obLHO9hLpmpRzu5ITU4+9mYDCrfQgpIU01JIg+hPiwQ+oNH14fzI9fy1ffINCP8YKwQgK7wwZ5Wz9pm8ioWjEGu+NgrsV3ofPSv1HGbgNbKq7x4BSirWtWQ5GBQUlytnofDr6tk5npan5nVofY+0x2bkdnU4QPBOwK0q//obVvcdEum0qXsvwRvNUQu4Au4wh7f6nSyzPTm5UPRYEMGUMLoa24gPSeUu0oPSbs57VxYhrf+izGj1JQOEg9i5w5g7Fr+TM3f+FhtRE0jgCpPaHnsm+gUzpf4cATwN5T9B2Fy4hCWxVGcjDZeKEA9Si5UIkW5CyGDxz4WMsVB22w2xt1HCLYx5CRH6HvhyFE+FT64j0ppWb33alga2TOx9TPpG8oz13TmqiS12vTt5QVYGmXaGmBvAVUfgg8fL6xj9tklbS4KNv5NzPkME/IsF+spLFMHVGXaLap3tlBERNUjnx2Qyj2jk7LjIW7GoJlp6etJmgCAV66A7injEozKKHIUxaDshOUKKDMB8ECJvJ/yXY9NjXSvk2JCTmi/fPxPy2PE0="
 before_script:
- - git clone https://github.com/apache/hadoop.git
+ - git clone --depth 1 https://github.com/apache/hadoop.git
  - cd hadoop
 script:
  - mvn site
