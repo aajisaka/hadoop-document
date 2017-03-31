@@ -13,10 +13,10 @@ before_script:
  - cd hadoop
 script:
  - cd hadoop-maven-plugins
- - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn mvn -B install
+ - mvn -B -q install
  - cd ..
- - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn mvn -B site -Dmaven.javadoc.skip=true
- - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn mvn -B site:stage -DstagingDirectory=~/gh-pages
+ - mvn -B -q site -Dmaven.javadoc.skip=true
+ - mvn -B -q site:stage -DstagingDirectory=~/gh-pages
 deploy:
   skip_cleanup: true
   provider: script
