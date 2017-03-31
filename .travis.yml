@@ -9,15 +9,14 @@ env:
 before_install:
  - sudo apt-get install -y protobuf-compiler
 before_script:
- - export MAVEN_OPTS=-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
  - git clone --depth 1 https://github.com/apache/hadoop.git
  - cd hadoop
 script:
  - cd hadoop-maven-plugins
- - mvn -B install
+ - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn mvn -B install
  - cd ..
- - mvn -B site -Dmaven.javadoc.skip=true
- - mvn -B site:stage -DstagingDirectory=~/gh-pages
+ - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn mvn -B site -Dmaven.javadoc.skip=true
+ - MAVEN_OPTS=-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn mvn -B site:stage -DstagingDirectory=~/gh-pages
 deploy:
   skip_cleanup: true
   provider: script
