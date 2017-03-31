@@ -15,7 +15,7 @@ script:
  - cd hadoop-maven-plugins
  - mvn install
  - cd ..
- - mvn site -Dmaven.javadoc.skip=true
+ - mvn site -Dmaven.javadoc.skip=true -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
  - mvn site:stage -DstagingDirectory=~/gh-pages
 deploy:
   skip_cleanup: true
