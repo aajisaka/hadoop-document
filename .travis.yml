@@ -20,7 +20,7 @@ script:
  - cd hadoop-maven-plugins
  - mvn -B -q install
  - cd ..
- - mvn -B -q site -Dmaven.javadoc.skip=true
+ - mvn -B -q site
  - mvn -B -q site:stage -DstagingDirectory=${STAGING_DIR}
  - cd ..
 deploy:
