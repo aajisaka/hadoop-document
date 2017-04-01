@@ -21,9 +21,10 @@ script:
  - cd ..
  - mvn -B -q site -Dmaven.javadoc.skip=true
  - mvn -B -q site:stage -DstagingDirectory=${PWD}/gh-pages
+ - cd ..
 deploy:
   skip_cleanup: true
   provider: script
-  script: "${PWD}/deploy.sh"
+  script: ./deploy.sh
   on:
     branch: master
