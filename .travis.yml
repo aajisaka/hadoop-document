@@ -32,17 +32,15 @@ before_install:
 before_script:
  - mkdir -p ${MAVEN_HOME}
  - curl -L -s -S http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz -o maven.tar.gz && tar xzf maven.tar.gz --strip-components 1 -C ${MAVEN_HOME}/
- - export MVN="${MAVEN_HOME}/bin/mvn"
+ - export PATH=${MAVEN_HOME}/bin:${PATH}
  - git clone --depth 1 https://github.com/apache/hadoop.git
  - cd hadoop
 script:
- - echo "${MVN}"
- - "${MVN} -version"
  - cd hadoop-maven-plugins
- - "${MVN} -B -q install"
+ - mvn -B -q install
  - cd ..
- - "${MVN} -B site"
- - "${MVN} -B -q site:stage -DstagingDirectory=${STAGING_DIR}"
+ - mvn -B site
+ - mvn -B -q site:stage -DstagingDirectory=${STAGING_DIR}
  - cd ..
 deploy:
   skip_cleanup: true
