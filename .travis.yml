@@ -39,7 +39,7 @@ before_script:
 script:
  - which mvn
  - ls -alh ${MAVEN_HOME}/bin
- - ${MAVEN_HOME}/bin -version
+ - ${MAVEN_HOME}/bin/mvn -version
  - mvn -version
  - cd hadoop-maven-plugins
  - mvn -B -q install
