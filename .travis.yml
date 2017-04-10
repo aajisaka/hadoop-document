@@ -37,6 +37,7 @@ before_script:
  - git clone --depth 1 https://github.com/apache/hadoop.git
  - cd hadoop
 script:
+ - alias
  - which mvn
  - ls -alh ${MAVEN_HOME}/bin
  - ${MAVEN_HOME}/bin/mvn -version
