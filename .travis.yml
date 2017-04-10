@@ -40,7 +40,7 @@ script:
  - which mvn
  - ls -alh ${MAVEN_HOME}/bin
  - cd hadoop-maven-plugins
- - mvn -B -q install
+ - ${MVN} -B -q install
  - cd ..
  - mvn -B site
  - mvn -B -q site:stage -DstagingDirectory=${STAGING_DIR}
