@@ -39,7 +39,7 @@ script:
  - cd hadoop-maven-plugins
  - ${MVN} -B -q install
  - cd ..
- - ${MVN} -B -q site
+ - ${MVN} -B site
  - ${MVN} -B -q site:stage -DstagingDirectory=${STAGING_DIR}
  - cd ..
 deploy:
