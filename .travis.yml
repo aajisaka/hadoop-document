@@ -37,12 +37,12 @@ before_script:
  - cd hadoop
 script:
  - echo "${MVN}"
- - "${MVN}" -version
+ - "${MVN} -version"
  - cd hadoop-maven-plugins
- - "${MVN}" -B -q install
+ - "${MVN} -B -q install"
  - cd ..
- - "${MVN}" -B site
- - "${MVN}" -B -q site:stage -DstagingDirectory=${STAGING_DIR}
+ - "${MVN} -B site"
+ - "${MVN} -B -q site:stage -DstagingDirectory=${STAGING_DIR}"
  - cd ..
 deploy:
   skip_cleanup: true
