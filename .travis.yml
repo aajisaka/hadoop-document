@@ -33,6 +33,9 @@ before_script:
  - git clone --depth 1 https://github.com/apache/hadoop.git
  - cd hadoop
 script:
+ - cd hadoop-maven-plugins
+ - mvn -B -q install
+ - cd ..
  - mvn -B site
  - mvn -B -q site:stage -DstagingDirectory=${STAGING_DIR}
  - cd ..
