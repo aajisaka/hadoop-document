@@ -36,6 +36,7 @@ script:
  - cd hadoop-maven-plugins
  - mvn -B -q install
  - cd ..
+ - mvn -B -q install -DskipTests -DskipShade
  - mvn -B site
  - mvn -B -q site:stage -DstagingDirectory=${STAGING_DIR}
  - cd ..
