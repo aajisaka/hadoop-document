@@ -15,8 +15,9 @@
 # limitations under the License.
 
 ---
+dist: bionic
 language: java
-dist: trusty
+jdk: openjdk8
 sudo: required
 env:
   global:
@@ -27,8 +28,6 @@ env:
 cache:
   directories:
     - $HOME/.m2
-before_install:
- - sudo apt-get install -y protobuf-compiler
 before_script:
  - git clone --depth 1 https://github.com/apache/hadoop.git
  - cd hadoop
