@@ -42,9 +42,10 @@ jobs:
       - name: Build document
         run: mvn --batch-mode site
       - name: Aggregate the document
-        run: mvn --batch-mode site:stage -DstagingDirectory=./staging
+        # Use absolute path for staging directory
+        run: mvn --batch-mode site:stage "-DstagingDirectory=${GITHUB_WORKSPACE}/staging"
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./staging
+          publish_dir: "${GITHUB_WORKSPACE}/staging"
