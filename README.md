@@ -1,8 +1,9 @@
 ## hadoop-document
 
-[![Build Status](https://travis-ci.org/aajisaka/hadoop-document.svg?branch=master)](https://travis-ci.org/aajisaka/hadoop-document)
+[![deploy](https://github.com/aajisaka/hadoop-document/actions/workflows/deploy.yml/badge.svg)](https://github.com/aajisaka/hadoop-document/actions/workflows/deploy.yml)
 [![License](http://img.shields.io/:license-Apache_v2-blue.svg)](https://github.com/aajisaka/hadoop-document/blob/master/LICENSE)
 
-Build and push Apache Hadoop document automatically via Travis CI.
+Build and push Apache Hadoop (trunk) document automatically via GitHub Actions.
 
-* https://aajisaka.github.io/hadoop-document/hadoop-project
+* https://aajisaka.github.io/hadoop-document/hadoop-project/
+
