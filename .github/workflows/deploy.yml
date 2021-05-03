@@ -37,7 +37,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       # Need to build maven plugins first
       - name: Build Hadoop maven plugins
-        run: cd ~/hadoop/hadoop-maven-plugin && mvn --batch-mode --quiet install && cd ..
+        run: cd ~/hadoop/hadoop-maven-plugins && mvn --batch-mode --quiet install && cd ..
       - name: Build Hadoop
         run: mvn --batch-mode --quiet install -DskipTests -DskipShade
       - name: Build document
