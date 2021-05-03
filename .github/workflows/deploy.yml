@@ -48,6 +48,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # workaround: set '/' to be regarded as absolute path in the plugin
-          publish_dir: /${GITHUB_WORKSPACE}/staging
+          publish_dir: ./staging
 
