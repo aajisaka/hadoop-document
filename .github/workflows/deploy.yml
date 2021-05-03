@@ -23,6 +23,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: apache/hadoop
+          path: hadoop
       - name: Set up JDK 8
         uses: actions/setup-java@v2
         with:
@@ -36,15 +37,15 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       # Need to build maven plugins first
       - name: Build Hadoop maven plugins
-        run: cd hadoop-maven-plugin && mvn --batch-mode --quiet install && cd ..
+        run: cd ~/hadoop/hadoop-maven-plugin && mvn --batch-mode --quiet install && cd ..
       - name: Build Hadoop
         run: mvn --batch-mode --quiet install -DskipTests -DskipShade
       - name: Build document
         run: mvn --batch-mode site
       - name: Aggregate the document
-        run: mvn --batch-mode --quiet site:stage -DstagingDirectory=./staging
+        run: mvn --batch-mode --quiet site:stage -DstagingDirectory=staging
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./staging
+          publish_dir: ~/hadoop/staging
