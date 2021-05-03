@@ -5,5 +5,5 @@
 
 Build and push Apache Hadoop (trunk) document automatically via GitHub Actions.
 
-* https://aajisaka.github.io/hadoop-document/hadoop-project/
+* https://aajisaka.github.io/hadoop-document/
 
