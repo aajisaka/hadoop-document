@@ -15,7 +15,7 @@
 # limitations under the License.
 
 ---
-dist: bionic
+dist: focal
 language: java
 jdk: openjdk8
 sudo: required
