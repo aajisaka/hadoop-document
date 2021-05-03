@@ -35,6 +35,8 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
+      - name: Debug
+        run: ls -al
       # Need to build maven plugins first
       - name: Build Hadoop maven plugins
         run: cd ~/hadoop/hadoop-maven-plugins && mvn --batch-mode --quiet install && cd ..
